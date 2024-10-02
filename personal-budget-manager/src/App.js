@@ -4,7 +4,6 @@ import ExpenseList from './components/ExpenseList';
 import ExpenseSummary from './components/ExpenseSummary';
 import BudgetAlert from './components/BudgetAlert';
 
-// Define the reducer function
 function expenseReducer(state, action) {
     switch (action.type) {
         case 'ADD_EXPENSE':
@@ -16,7 +15,7 @@ function expenseReducer(state, action) {
         case 'DELETE_EXPENSE':
             return state.filter((expense) => expense.id !== action.payload);
         case 'SET_EXPENSES':
-            return action.payload; // To set initial expenses from localStorage
+            return action.payload;
         default:
             return state;
     }

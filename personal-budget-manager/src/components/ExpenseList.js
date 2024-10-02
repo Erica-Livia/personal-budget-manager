@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import EditExpenseModal from './EditExpenseModal'; // Import the modal component
-import DeleteWarningModal from './DeleteWarningModal'; // Import the modal component
+import EditExpenseModal from './EditExpenseModal';
+import DeleteWarningModal from './DeleteWarningModal';
 
 // Define a color map for categories
 const categoryColors = {
@@ -14,14 +14,14 @@ const categoryColors = {
     Gift: '#ff3399', // Pink
 };
 
-// Helper function to determine if text should be black or white based on background color brightness
+
 const getTextColor = (bgColor) => {
     const hex = bgColor.replace('#', '');
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000; // Calculate brightness (using luminance)
-    return brightness > 125 ? 'text-black' : 'text-white'; // If brightness is high, return black text; otherwise, white
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness > 125 ? 'text-black' : 'text-white';
 };
 
 const ExpenseList = ({ expenses, dispatch }) => {
@@ -52,8 +52,8 @@ const ExpenseList = ({ expenses, dispatch }) => {
             <h2 className="text-xl mb-2">Expenses</h2>
             <ul>
                 {expenses.map((expense, index) => {
-                    const bgColor = categoryColors[expense.category] || '#e9e9ea'; // Fallback color if category not in map
-                    const textColor = getTextColor(bgColor); // Determine appropriate text color
+                    const bgColor = categoryColors[expense.category] || '#e9e9ea';
+                    const textColor = getTextColor(bgColor);
 
                     return (
                         <li key={index} className="mb-2 p-4 rounded-lg" style={{ backgroundColor: bgColor }}>

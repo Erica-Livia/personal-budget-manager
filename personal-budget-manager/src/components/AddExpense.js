@@ -28,7 +28,7 @@ const AddExpense = ({ dispatch }) => {
                 placeholder="Amount"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="mb-2 p-2 w-full bg-black50 text-black" // Set text color to black for light background
+                className="mb-2 p-2 w-full bg-black50 text-black"
             />
 
             {/* Dropdown for selecting category */}
@@ -52,7 +52,7 @@ const AddExpense = ({ dispatch }) => {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="mb-2 p-2 w-full bg-black50 text-black" // Set text color to black for light background
+                className="mb-2 p-2 w-full bg-black50 text-black"
             />
 
             <button type="submit" className="bg-blue500 p-2 w-full text-white">

@@ -29,7 +29,7 @@ const ExpenseSummary = ({ expenses }) => {
             {
                 data: Object.values(categories),
                 backgroundColor: Object.keys(categories).map(
-                    category => categoryColors[category] || '#e9e9ea' // Fallback color if category not found
+                    category => categoryColors[category] || '#e9e9ea'
                 ),
             },
         ],

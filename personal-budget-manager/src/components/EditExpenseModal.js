@@ -29,14 +29,14 @@ const EditExpenseModal = ({ expense, setEditModalOpen, dispatch }) => {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="mb-2 p-2 w-full bg-gray-200 text-black" // Added text-black for input text color
+                    className="mb-2 p-2 w-full bg-gray-200 text-black"
                     placeholder="Category"
                 />
                 <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="mb-2 p-2 w-full bg-gray-200 text-black" // Added text-black for input text color
+                    className="mb-2 p-2 w-full bg-gray-200 text-black"
                 />
 
                 <div className="flex justify-end space-x-2 mt-4">
