@@ -28,14 +28,14 @@ const AddExpense = ({ dispatch }) => {
                 placeholder="Amount"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="mb-2 p-2 w-full bg-black50 text-white"
+                className="mb-2 p-2 w-full bg-black50 text-black" // Set text color to black for light background
             />
 
             {/* Dropdown for selecting category */}
             <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="mb-2 p-2 w-full bg-black50 text-white"
+                className="mb-2 p-2 w-full bg-black50 text-black" // Set text color to black for light background
             >
                 <option value="">Select Category</option>
                 <option value="Groceries">Groceries</option>
@@ -52,10 +52,10 @@ const AddExpense = ({ dispatch }) => {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="mb-2 p-2 w-full bg-black50 text-white"
+                className="mb-2 p-2 w-full bg-black50 text-black" // Set text color to black for light background
             />
 
-            <button type="submit" className="bg-blue500 p-2 w-full">
+            <button type="submit" className="bg-blue500 p-2 w-full text-white">
                 Add Expense
             </button>
         </form>
