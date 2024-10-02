@@ -16,27 +16,27 @@ const EditExpenseModal = ({ expense, setEditModalOpen, dispatch }) => {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-6 rounded-lg w-1/3">
-                <h2 className="text-xl mb-4">Edit Expense</h2>
+                <h2 className="text-xl mb-4 text-black">Edit Expense</h2>
 
                 <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="mb-2 p-2 w-full bg-gray-200"
+                    className="mb-2 p-2 w-full bg-gray-200 text-black" // Added text-black for input text color
                     placeholder="Amount"
                 />
                 <input
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="mb-2 p-2 w-full bg-gray-200"
+                    className="mb-2 p-2 w-full bg-gray-200 text-black" // Added text-black for input text color
                     placeholder="Category"
                 />
                 <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="mb-2 p-2 w-full bg-gray-200"
+                    className="mb-2 p-2 w-full bg-gray-200 text-black" // Added text-black for input text color
                 />
 
                 <div className="flex justify-end space-x-2 mt-4">

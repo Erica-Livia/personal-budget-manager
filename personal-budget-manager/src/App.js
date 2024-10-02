@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import AddExpense from './components/AddExpense';
 import ExpenseList from './components/ExpenseList';
 import ExpenseSummary from './components/ExpenseSummary';
@@ -15,19 +15,28 @@ function expenseReducer(state, action) {
             );
         case 'DELETE_EXPENSE':
             return state.filter((expense) => expense.id !== action.payload);
+        case 'SET_EXPENSES':
+            return action.payload; // To set initial expenses from localStorage
         default:
             return state;
     }
 }
 
 function App() {
-    // useReducer to manage expenses
-    const [expenses, dispatch] = useReducer(expenseReducer, []);
+    // Get initial expenses from localStorage, if available
+    const initialExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+
+    const [expenses, dispatch] = useReducer(expenseReducer, initialExpenses);
     const [budget, setBudget] = useState({
         food: 500,
         transport: 300,
         entertainment: 200,
     });
+
+    // Save expenses to localStorage whenever expenses state changes
+    useEffect(() => {
+        localStorage.setItem('expenses', JSON.stringify(expenses));
+    }, [expenses]);
 
     return (
         <div className="min-h-screen bg-lightBlack text-white font-manrope">
