@@ -36,9 +36,11 @@ const ExpenseSummary = ({ expenses }) => {
     };
 
     return (
-        <div className="mb-4">
-            <h2 className="text-xl mb-2">Expense Summary</h2>
-            <Pie data={data} />
+        <div className="mb-4 flex justify-center"> {/* Flexbox to center the chart */}
+            <div className="w-96 h-96"> {/* Fixed width and height */}
+                <h2 className="text-xl mb-2 text-center">Expense Summary</h2>
+                <Pie data={data} />
+            </div>
         </div>
     );
 };
